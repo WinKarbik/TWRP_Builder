@@ -18,7 +18,7 @@ on:
       DEVICE_TREE_BRANCH:
         description: 'DEVICE_TREE_BRANCH'
         required: true
-        default: 'RMX3581_Natv-user-11-RP1A.201005.001-8442-release-keys'
+        default: 'android-11.0-crypto-test'
       DEVICE_PATH:
         description: 'DEVICE_PATH'
         required: true
@@ -163,7 +163,6 @@ jobs:
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/${{ github.event.inputs.BUILD_TARGET }}.img
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*.zip
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*vendor*.img
-          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/system/bin/wait_for_keymaster
         name: ${{ github.event.inputs.DEVICE_NAME }}-${{ github.run_id }}
         tag_name: ${{ github.run_id }}
         body: |
